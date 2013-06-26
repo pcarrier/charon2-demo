@@ -23,3 +23,7 @@ This is a simple illustration of re-proxying with nginx.
 - Run the `curl` test with:
 
         $ make test
+
+- Run the `curl` POST test with:
+
+        $ make post

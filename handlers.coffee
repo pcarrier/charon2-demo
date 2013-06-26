@@ -5,6 +5,8 @@ log = (srv, req) ->
 
 rdr = http.createServer (req, res) =>
 	log 'rdr', req
+	req.on 'data', (data)->
+		console.log "rdr data: #{data}"
 	res.writeHead 200,
 		'Foo': 1
 		'Bar': 2
@@ -13,6 +15,8 @@ rdr = http.createServer (req, res) =>
 
 tgt = http.createServer (req, res) =>
 	log 'tgt', req
+	req.on 'data', (data)->
+		console.log "tgt data: #{data}"
 	res.end 'done'
 
 rdr.listen 8081

@@ -11,3 +11,6 @@ handlers:
 
 test:
 	curl -D/dev/stdout -A '' -H 'Accept:' -H 'hello: world' 127.0.0.1:8080
+
+post:
+	curl -D/dev/stdout -X POST --data-binary 'foo=bar'      127.0.0.1:8080
